@@ -1,7 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <head>
     <title></title>
     <meta charset="utf-8">
@@ -13,7 +12,7 @@
         }
     </style>
 </head>
-<body onload="init();animate();">
+<body>
 
 <script src="js/three.js"></script>
 <script src="js/TrackballControls.js"></script>
@@ -22,9 +21,10 @@
 <script>
 
     var camera, scene, renderer,textureCube;
-    var mesh,controls;
+    var mesh;
 
-
+    init();
+    animate();
 
     function init() {
         if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -34,25 +34,11 @@
         document.body.appendChild( renderer.domElement );
         //
         camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 1000 );
-        camera.position.z = 400;
-
-        controls = new THREE.TrackballControls( camera );
-
-
-        controls.rotateSpeed = 5.0;
-        controls.zoomSpeed = 5;
-        controls.panSpeed = 2;
-
-        controls.noZoom = false;
-        controls.noPan = false;
-
-        controls.staticMoving = false;
-        controls.dynamicDampingFactor = 0.3;
-
+        camera.position.z = 900;
         scene = new THREE.Scene();
 
 
-		var geometry = new THREE.CubeGeometry(300,300,300,1,1,1);
+		var geometry = new THREE.CubeGeometry(400,400,400,1,1,1);
         // 纹理坐标怎么弄
 
         function createCubeMap() {
@@ -86,19 +72,17 @@
         camera.aspect = window.innerWidth / window.innerHeight;
         camera.updateProjectionMatrix();
         renderer.setSize( window.innerWidth, window.innerHeight );
-        controls.handleResize();
     }
 
     function animate() {
-		mesh.rotation.y -= 0.003;
-		mesh.rotation.x -= 0.003;
-        mesh.rotation.z -= 0.003;
+		mesh.rotation.y -= 0.004;
+		mesh.rotation.x -= 0.005;
+        mesh.rotation.z += 0.004;
         requestAnimationFrame( animate );
-//        controls.update();
         renderer.render( scene, camera );
     }
 
 </script>
 
-</body >
+</body>
 </html>
