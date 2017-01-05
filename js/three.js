@@ -36171,4 +36171,5 @@ THREE.MorphBlendMesh.prototype.update = function ( delta ) {
 	}
 
 };
+THREE.CubeReflectionMapping = function () {};
 
