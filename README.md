@@ -49,4 +49,6 @@ threetest2.html
     var textureCube = THREE.ImageUtils.loadTextureCube(urls, new THREE.CubeReflectionMapping());
     对loadTextureCube的应用
 
-
+td_eyes.html
+    全景图（贴在立方体上）
+    对六张图图片要求很高 是一张全景图处理成的六张图片 可使用blender插件处理 也可上网上下载全景图片
