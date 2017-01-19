@@ -39,7 +39,7 @@ clientY 设置或获取鼠标指针位置相对于窗口客户区域的 y 坐标
 
 testmesh.html
 
-    粗糙的纹理应用，即纹理贴在立方体上
+    粗糙的纹理应用，即纹理贴在立方体外侧
     主要代码
     var cubeMaterialss=new THREE.MeshBasicMaterial({map:new THREE.ImageUtils.loadTexture('images/3.jpg')});
     对loadTexture的应用
@@ -50,5 +50,5 @@ threetest2.html
     对loadTextureCube的应用
 
 td_eyes.html
-    全景图（贴在立方体上）
+    全景图（贴在立方体内侧）
     对六张图图片要求很高 是一张全景图处理成的六张图片 可使用blender插件处理 也可上网上下载全景图片
