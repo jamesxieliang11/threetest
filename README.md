@@ -39,11 +39,14 @@ clientY 设置或获取鼠标指针位置相对于窗口客户区域的 y 坐标
 
 testmesh.html
 
-    粗糙的纹理应用，即纹理贴在立方体上，在中一起阐述 
+    粗糙的纹理应用，即纹理贴在立方体上
     主要代码
     var cubeMaterialss=new THREE.MeshBasicMaterial({map:new THREE.ImageUtils.loadTexture('images/3.jpg')});
+    对loadTexture的应用
 
 threetest2.html
-    
+    主要代码
+    var textureCube = THREE.ImageUtils.loadTextureCube(urls, new THREE.CubeReflectionMapping());
+    对loadTextureCube的应用
 
 
