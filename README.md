@@ -52,3 +52,39 @@ threetest2.html
 td_eyes.html
     全景图（贴在立方体内侧）
     对六张图图片要求很高 是一张全景图处理成的六张图片 可使用blender插件处理 也可上网上下载全景图片
+
+orthographic.html
+
+for ( var i = - size; i <= size; i += step ) {
+    geometry.vertices.push( new THREE.Vector3( - size, 0, i ) );
+    geometry.vertices.push( new THREE.Vector3(   size, 0, i ) );
+    geometry.vertices.push( new THREE.Vector3( i, 0, - size ) );
+    geometry.vertices.push( new THREE.Vector3( i, 0,   size ) );
+    }
+    var material = new THREE.LineBasicMaterial( { color: 0x000000, opacity: 0.2 } );
+    var line = new THREE.Line( geometry, material );
+    line.type = THREE.LinePieces;
+    scene.add( line );
+
+    每次生成两条直线
+    geometry.vertices.push( new THREE.Vector3( - size, 0, i ) );
+    geometry.vertices.push( new THREE.Vector3(   size, 0, i ) );
+    两点确定一条直线
+    geometry.vertices是一个包含了许多点信息的数组 
+    THREE.Line( geometry, material )会把geometry.vertices中的所有的点处理为线
+
+    for ( var i = 0; i < 100; i ++ ) {
+    var cube = new THREE.Mesh( geometry, material );
+    cube.scale.y = Math.floor( Math.random() * 2 + 1 );
+    cube.position.x = Math.floor( ( Math.random() * 1000 - 500 ) / 50 ) * 50 + 25;
+    cube.position.y = ( cube.scale.y * 50 ) / 2;
+    cube.position.z = Math.floor( ( Math.random() * 1000 - 500 ) / 50 ) * 50 + 25;
+    scene.add(cube);
+    }
+    生成cube立方体
+    cube.scale.y = Math.floor( Math.random() * 2 + 1 );//在y方向上缩放cub；
+    cube.position.x = Math.floor( ( Math.random() * 1000 - 500 ) / 50 ) * 50 + 25;
+    cube.position.z = Math.floor( ( Math.random() * 1000 - 500 ) / 50 ) * 50 + 25;//随机生成cube的位置
+    cube.position.y = ( cube.scale.y * 50 ) / 2;//放在平面位置底部和line平面平行
+    
+    
