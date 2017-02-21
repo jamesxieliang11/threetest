@@ -1,10 +1,9 @@
-index.html: 
+http://jamexl.oschina.io/webgl/index.html: 
     可控制立方体组 
     控件js/TrackballControls.js （待自改）
     canvas引入webgl API（构造立方体）
-    requestanimateframe实现动态渲染（动画和控制实时刷新）
-
-geometry_earth.html：
+    requestanimateframe实现动态渲染（动画和控制实时刷新）
+http://jamexl.oschina.io/webgl/geometry_earth.html：
 
     控件代码
 
@@ -37,23 +36,23 @@ clientY 设置或获取鼠标指针位置相对于窗口客户区域的 y 坐标
     camera.lookAt(scene.position),会是相机对准场景（因为我们的球体在场景中），而相机的position（x，y）是在变化的position.z是固定的（可查看代码）
     大可注释掉group.rotation.y -= 0.005这段让球体自动旋转的代码即可查看到效果 发现远近交互的效果
 
-testmesh.html
+http://jamexl.oschina.io/webgl/testmesh.html
 
     粗糙的纹理应用，即纹理贴在立方体外侧
     主要代码
     var cubeMaterialss=new THREE.MeshBasicMaterial({map:new THREE.ImageUtils.loadTexture('images/3.jpg')});
     对loadTexture的应用
 
-threetest2.html
+http://jamexl.oschina.io/webgl/threetest2.html
     主要代码
     var textureCube = THREE.ImageUtils.loadTextureCube(urls, new THREE.CubeReflectionMapping());
     对loadTextureCube的应用
 
-td_eyes.html
+http://jamexl.oschina.io/webgl/td_eyes.html
     全景图（贴在立方体内侧）
     对六张图图片要求很高 是一张全景图处理成的六张图片 可使用blender插件处理 也可上网上下载全景图片
 
-orthographic.html
+http://jamexl.oschina.io/webgl/orthographic.html
 
 for ( var i = - size; i <= size; i += step ) {
     geometry.vertices.push( new THREE.Vector3( - size, 0, i ) );
