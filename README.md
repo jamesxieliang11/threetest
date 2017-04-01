@@ -3,6 +3,8 @@ http://jamexl.oschina.io/webgl/index.html:
     控件js/TrackballControls.js （待自改）
     canvas引入webgl API（构造立方体）
     requestanimateframe实现动态渲染（动画和控制实时刷新）
+    
+    
 http://jamexl.oschina.io/webgl/geometry_earth.html:
 
     控件代码
